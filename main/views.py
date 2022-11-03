@@ -9,7 +9,7 @@ def Index(request):
 # Create your views here.
 def Home(request):
     Projets = Projet.objects.all()
-    context = {'Projets':Projets,}
+    context = {'Projets': Projets,}
     return render(request, 'main/index.html', context)
 
 def Contact(request):
@@ -22,7 +22,7 @@ def Contact(request):
             nom = form.cleaned_data.get('nom')
             email = form.cleaned_data.get('email')
             message = form.cleaned_data.get('message')
-            to = 'bdiouipierre@gmail.com'
+            to = 'contact@kujenga-architectes.com'
 
             subject = 'Nouveau message sur votre application !'
             message = 'de :' + email + '| message : ' + message
