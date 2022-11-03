@@ -232,7 +232,7 @@
 					<div class="nav__header clearfix">
 						<!-- Logo -->
 						<div class="logo-wrap local-scroll">
-							<a href="{% url 'Main:Home' %}" class="logo__url">
+							<a href="{% url 'main:Home' %}" class="logo__url">
 								<img class="logo logo--dark" style="height:60px !important; padding-top:20px;" src="{% static 'img/Logo_4couleurs.png' %}" alt="logo" itemtype="http://schema.org/Organization" itemscope>
 							</a>
 						</div>
@@ -249,19 +249,19 @@
 					<nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope">              
 						<ul class="nav__menu local-scroll" id="onepage-nav">
 							<li>
-								<a href="{% url 'Main:Home' %}" class="nav-link active">Accueil</a>
+								<a href="{% url 'main:Home' %}" class="nav-link active">Accueil</a>
 							</li>
 							<li>
-								<a href="{% url 'Main:A_propos' %}" class="nav-link">Qui sommes-nous ?</a>
+								<a href="{% url 'main:A_propos' %}" class="nav-link">Qui sommes-nous ?</a>
 							</li>
 							<li>
-								<a href="{% url 'Main:Portfolio' %}" class="nav-link">Portfolio</a>
+								<a href="{% url 'main:Portfolio' %}" class="nav-link">Portfolio</a>
 							</li>
 							<li>
-								<a href="{% url 'Main:Team' %}" class="nav-link">L'équipe</a>
+								<a href="{% url 'main:Team' %}" class="nav-link">L'équipe</a>
 							</li>
 							<li>
-								<a href="{% url 'Main:Contact' %}" class="nav-link">Contact</a>
+								<a href="{% url 'main:Contact' %}" class="nav-link">Contact</a>
 							</li>
 						</ul> <!-- end menu -->
 
@@ -368,7 +368,7 @@
 										<img src="{% static 'img/team/DANIA1.jpg' %}" class="project__img hover-shrink--zoom" alt="project 2">
 									</figure>
 								</div>
-								<a href="{% url 'Main:Profile_Dania'%}" class="project__description-wrap">
+								<a href="{% url 'main:Profile_Dania'%}" class="project__description-wrap">
 									<div class="project__description">
 										<h3 class="project__title">Dania Soumaïla </br> <span style="font-weight:300 !important;">Fondatrice</span></h3>
 										<span class="project__category" style="font-style:italic !important; color:black">"C'est que de la logistique"</span>
@@ -384,7 +384,7 @@
 										<img src="{% static 'img/team/INOU2.jpg' %}" class="project__img hover-shrink--zoom" alt="project 1">
 									</figure>
 								</div>
-								<a href="{% url 'Main:Profile_Inou'%}" class="project__description-wrap">
+								<a href="{% url 'main:Profile_Inou'%}" class="project__description-wrap">
 									<div class="project__description">
 										<h3 class="project__title">Inoussia Ahmed</br> <span style="font-weight:300 !important;">Cheffe de projet</span></h3>
 										<span class="project__category" style="font-style:italic !important; color:black;">"C'est stylé ça !"</span>
@@ -402,7 +402,7 @@
 										<img src="{% static 'img/team/HOUZA8.jpg' %}" class="project__img hover-shrink--zoom" alt="project 3">
 									</figure>
 								</div>
-								<a href="{% url 'Main:Profile_Houza' %}"  class="project__description-wrap">
+								<a href="{% url 'main:Profile_Houza' %}"  class="project__description-wrap">
 									<div class="project__description">
 										<h3 class="project__title">Houzaïra Boina</br> <span style="font-weight:300 !important;">Partenaire clé, fondatrice de Badcoffy</span></h3>
 										<span class="project__category" style="font-style:italic !important; color:black;">“Ca manque de profondeur”</span>
@@ -418,7 +418,7 @@
 										<img src="{% static 'img/team/MAMBADI8.jpg' %}" class="project__img hover-shrink--zoom" alt="project 4">
 									</figure>
 								</div>
-								<a href="{% url 'Main:Profile_Mambadi'%}"  class="project__description-wrap">
+								<a href="{% url 'main:Profile_Mambadi'%}"  class="project__description-wrap">
 									<div class="project__description">
 										<h3 class="project__title">Mambadi Issoufi</br> <span style="font-weight:300 !important;">Partenaire clé, fondateur de Mayotte Conseil Conception Ingénierie</span></h3>
 										<span class="project__category" style="font-style:italic !important; color:black;">“Ca va pas tenir ça !”</span>
@@ -491,7 +491,7 @@
 					<div class="slick-slider-item">
 						<article class="entry hover-shrink" itemscope itemtype="http://schema.org/Article">
 							<div class="entry__body">
-								<a href="{% url 'Main:Project' projet.pk %}" class="entry__url"></a>
+								<a href="{% url 'main:Project' projet.pk %}" class="entry__url"></a>
 								<figure class="entry__img-holder bg-gradient-bottom hover-shrink--shrink">	
 									<img src="{{projet.image.url}}" class="entry__img hover-shrink--zoom" itemprop="image" alt="">
 								</figure>
@@ -569,7 +569,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6">
-							<a href="{% url 'Main:Home' %}" class="logo__url">
+							<a href="{% url 'main:Home' %}" class="logo__url">
 								<img class="logo" src="{% static 'img/Logo_noir.png' %}" style="width:150px;" alt="logo" itemtype="http://schema.org/Organization" itemscope>
 							</a>
 						</div>
