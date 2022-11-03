@@ -1,0 +1,592 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Kujenga | cabinet d'architecture</title>
+
+	<meta charset="utf-8">
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="">
+	
+	<!-- Google Fonts -->
+	<link href='//fonts.googleapis.com/css?family=Montserrat:700,400|Archivo:400,400i,700' rel='stylesheet'>
+
+	<!-- Css -->
+	<link rel="stylesheet" href="{% static 'css/style.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="{% static 'img/logo.png' %}">
+	<link rel="icon" href="{% static 'img/logo_blanc_seul.png' %}">
+
+</head>
+
+<style>
+	.logo {
+	max-height: 200px;
+	position: relative; }
+
+	#ethnic {
+		transition: fill 0.3s ease-in-out 0.1s;
+	}
+
+	#ethnic:hover {
+		fill:#ffc62d;
+		cursor: pointer;
+	}
+
+	.services-list {
+	list-style: none;
+	position: relative;
+	width: 100%; }
+	@media only screen and (min-width: 1025px) {
+		.services-list {
+			flex: 0 0 50%;
+			max-width: 50%;
+			padding-right: 40px; } }
+	@media only screen and (max-width: 1024px) {
+		.services-list {
+			margin-bottom: 56px; } }
+	.services-list__item {
+		position: relative;
+		font-family: "aktiv-grotesk-extended", "Montserrat", sans-serif;
+		font-weight: 700;
+		color: #b5b5b5;
+		cursor: pointer;
+		letter-spacing: -0.05em;
+		transition: all 0.4s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+		font-size: 34px;
+		font-size: 2.125rem; }
+		@media (prefers-reduced-motion: reduce) {
+			.services-list__item {
+				transition: none; } }
+		@media only screen and (min-width: 1025px) {
+			.services-list__item {
+				font-size: 56px;
+				font-size: 3.5rem; } }
+		.services-list__item:hover, .services-list__item--is-active {
+			color: #000000; }
+			.services-list__item:hover span::after, .services-list__item--is-active span::after {
+				width: 100%; }
+	.services-list__label {
+		position: relative;
+		z-index: 1; }
+		.services-list__label::after {
+			content: '';
+			z-index: -1;
+			position: absolute;
+			display: block;
+			bottom: 10px;
+			height: 16px;
+			width: 0;
+			background-color: #296C49;
+			transition: all 0.4s cubic-bezier(0.25, 0.74, 0.22, 0.99); }
+			@media only screen and (min-width: 1025px) {
+				.services-list__label::after {
+					bottom: 20px; } }
+
+.project {
+	position: relative;
+	overflow: hidden;
+	padding: 30px; }
+	@media only screen and (min-width: 1025px) {
+		.project {
+			padding: 70px; }
+			.project:nth-child(2) {
+				margin-top: 140px; } }
+	.project-slide {
+		margin: 0 19px; }
+	.project__container {
+		position: relative; }
+	.project__img-holder {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden; }
+	.project__img {
+		width: 100%;
+		filter: blur(15px);
+		transition: all 0.4s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+		overflow: hidden;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden; }
+		@media (prefers-reduced-motion: reduce) {
+			.project__img {
+				transition: none; } }
+	.project__title, .project__category {
+		opacity: 0;
+		transition: opacity 0.2s cubic-bezier(0.07, 0.98, 0, 0.96); }
+		@media (prefers-reduced-motion: reduce) {
+			.project__title, .project__category {
+				transition: none; } }
+	.project__description-wrap {
+		position: absolute;
+		opacity: 0;
+		bottom: 40px;
+		left: 40px;
+		display: inline-block;
+		width: 78%;
+		max-width: 260px;
+		-webkit-clip-path: inset(0 0 0 100%);
+		clip-path: inset(0 0 0 100%);
+		transition: opacity 0.2s 0.3s, -webkit-clip-path 0s 0.3s;
+		transition: opacity 0.2s 0.3s, clip-path 0s 0.3s;
+		transition: opacity 0.2s 0.3s, clip-path 0s 0.3s, -webkit-clip-path 0s 0.3s; }
+		@media (prefers-reduced-motion: reduce) {
+			.project__description-wrap {
+				transition: none; } }
+	.project__description {
+		position: relative;
+		padding: 16px 20px; }
+		.project__description:after {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: #fff;
+			transform-origin: 0 50%;
+			transform: scaleX(0);
+			transition: transform 0.35s cubic-bezier(0.07, 0.98, 0, 0.96); }
+			@media (prefers-reduced-motion: reduce) {
+				.project__description:after {
+					transition: none; } }
+	.project:hover .project__description-wrap {
+		opacity: 1;
+		filter: blur(0px);
+		-webkit-clip-path: inset(0 0 0 0);
+		clip-path: inset(0 0 0 0);
+		transition: -webkit-clip-path 0.8s cubic-bezier(0.07, 0.98, 0, 0.96);
+		transition: clip-path 0.8s cubic-bezier(0.07, 0.98, 0, 0.96);
+		transition: clip-path 0.8s cubic-bezier(0.07, 0.98, 0, 0.96), -webkit-clip-path 0.8s cubic-bezier(0.07, 0.98, 0, 0.96); }
+	.project:hover .project__description:after {
+		transform-origin: 100% 50%;
+		transform: scaleX(1);
+		transition: transform 0.7s cubic-bezier(0.07, 0.98, 0, 0.96); }
+		@media (prefers-reduced-motion: reduce) {
+			.project:hover .project__description:after {
+				transition: none; } }
+	.project:hover .project__title,
+	.project:hover .project__category {
+		opacity: 1; }
+	.project__url {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100%; }
+	.project__title {
+		font-size: 1.25rem;
+		position: relative;
+		z-index: 2; }
+	.project__category {
+		position: relative;
+		z-index: 2;
+		display: inline-block;
+		margin-top: 16px;
+		font-size: 0.875rem;
+		font-weight: 700; }
+
+	.hover-shrink--shrink, .hover-shrink--zoom {
+	transition: all 0.2s ease-in-out; }
+	@media (prefers-reduced-motion: reduce) {
+		.hover-shrink--shrink, .hover-shrink--zoom {
+			transition: none; } }
+
+	.hover-shrink:hover .hover-shrink--shrink {
+		transform: scale(0.95);
+		filter: blur(0px);
+		}
+
+	.project__img:hover {
+		filter: blur(0px);
+	}
+
+
+
+</style>
+<body data-cookies="on" id="home" itemscope itemtype="http://schema.org/WebPage">
+
+	<!-- Preloader -->
+	<div class="loader-mask">
+		<div class="loader">
+			<img class="loader-logo logo" src="{% static 'img/logo_blanc_seul.png' %}" alt="logo"
+				itemtype="http://schema.org/Organization" itemscope>
+				<div class="loader-bar" style="margin-top:30px;"><span></span></div>
+			"Loading..."
+		</div>
+	</div>
+
+	<!-- Header -->
+	<header class="nav header" itemtype="http://schema.org/WPHeader" itemscope>
+
+		<div class="nav__holder nav--sticky" id="nav--sticky">
+			<div class="container nav__container">
+				<div class="flex-parent">
+
+					<div class="nav__header clearfix">
+						<!-- Logo -->
+						<div class="logo-wrap local-scroll">
+							<a href="{% url 'Main:Home' %}" class="logo__url">
+								<img class="logo logo--dark" style="height:60px !important; padding-top:20px;" src="{% static 'img/Logo_4couleurs.png' %}" alt="logo" itemtype="http://schema.org/Organization" itemscope>
+							</a>
+						</div>
+
+						<button type="button" class="nav__icon-toggle" id="nav__icon-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="nav__icon-toggle-bar"></span>
+							<span class="nav__icon-toggle-bar"></span>
+							<span class="nav__icon-toggle-bar"></span>
+						</button>
+					</div> <!-- end nav-header -->
+					
+					<!-- Navbar -->
+					<nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope">              
+						<ul class="nav__menu local-scroll" id="onepage-nav">
+							<li>
+								<a href="{% url 'Main:Home' %}" class="nav-link active">Accueil</a>
+							</li>
+							<li>
+								<a href="{% url 'Main:A_propos' %}" class="nav-link">Qui sommes-nous ?</a>
+							</li>
+							<li>
+								<a href="{% url 'Main:Portfolio' %}" class="nav-link">Portfolio</a>
+							</li>
+							<li>
+								<a href="{% url 'Main:Team' %}" class="nav-link">L'équipe</a>
+							</li>
+							<li>
+								<a href="{% url 'Main:Contact' %}" class="nav-link">Contact</a>
+							</li>
+						</ul> <!-- end menu -->
+
+					</nav> <!-- end nav-wrap -->
+
+				</div> <!-- end flex-parent -->
+			</div> <!-- end container -->
+
+		</div>
+	</header> <!-- end header -->
+
+	<div class="main-wrap">
+		<main class="content-wrap">
+
+			<!-- Hero -->
+			<section class="section-hero hero" style="padding-top:40px !important;">
+				<div class="container hero__container">
+					<div class="row mt-5">
+						<div class="col-md-6">
+							<div class="hero__text-content-wrap">
+								<div class="hero__text-content">
+									<h1 style="">Kujenga</h1>
+									<h3 class="hero__subtitle">Toute notre énergie pour construire votre projet.</h3>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 d-md-block d-none">
+							<div class="hero__img">
+								<div id="" class="" style="width:400px !important;">
+									<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1005 1051" style="enable-background:new 0 0 1005 1051;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E63A1F;}
+	.st1{fill:#2A6C49;}
+	.st2{fill:#FBC009;}
+	.st3{fill:#FFFFFF;}
+</style>
+<g>
+	<path d="M996.86,803.55c1.14,1.14,2.27,2.28,3.4,3.42c0,0.27,0,0.55,0,0.82c0.18,0.18,0.36,0.36,0.54,0.54V300.92
+		C916.42,385,832.04,469.08,747.66,553.16C830.73,636.62,913.79,720.09,996.86,803.55z"/>
+	<polygon class="st0" points="594.96,13.61 348.83,13.61 347.18,254.82 	"/>
+	<polygon class="st1" points="254.78,1041 448.37,1041 454.68,1034.93 616.94,878.74 779.2,1034.93 785.51,1041 998.14,1041
+		628.97,671.83 	"/>
+	<polygon class="st2" points="833.73,13.61 176.75,653.18 181.13,13.61 11.9,13.61 11.9,1038.75 15.98,1034.73 510.17,548.35
+		996.86,62.83 1000.8,58.9 1000.8,13.61 	"/>
+	<path class="st3" d="M510.17,548.35l-494.2,486.39l-4.08,4.01L9.61,1041h2.29H16h231.43h7.34l374.19-369.17L998.14,1041h2.35h0.32
+		V808.33c-0.18-0.18-0.36-0.36-0.54-0.54c0-0.27,0-0.55,0-0.82c-1.13-1.14-2.27-2.28-3.4-3.42
+		c-83.07-83.46-166.14-166.93-249.21-250.39C832.04,469.08,916.42,385,1000.8,300.92v-5.46V62.86V58.9l-3.94,3.93L510.17,548.35z"/>
+	<polygon class="st3" points="616.94,878.74 454.68,1034.93 448.37,1041 454.68,1041 779.2,1041 785.51,1041 779.2,1034.93 	"/>
+	<polygon class="st3" points="833.73,13.61 594.96,13.61 347.18,254.82 348.83,13.61 181.13,13.61 176.75,653.18 	"/>
+</g>
+</svg>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+					<div class="row hero__bottom-row">
+						<div class="col d-md-block d-none">
+							<div class="hero__scroll-down local-scroll">
+								<a href="#intro" class="hero__scroll-down-link title-link animate-letters">Qui sommes nous ? </a>
+							</div>
+						</div>
+						<div class="col">
+							<div class="hero__socials">
+								<div class="socials">
+									<!--<a href="#" class="social social-twitter" aria-label="twitter" title="twitter" target="_blank"><i class="dorya-icon-twitter"></i></a>-->
+									<!--<a href="#" class="social social-facebook" aria-label="facebook" title="facebook" target="_blank"><i class="dorya-icon-facebook"></i></a>-->
+									<!--<a href="#" class="social social-instagram" aria-label="instagram" title="instagram" target="_blank"><i class="dorya-icon-instagram"></i></a>-->
+									<!--<a href="#" class="social social-linkedin" aria-label="linkedin" title="linkedin" target="_blank"><i class="dorya-icon-linkedin"></i></a>-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section> <!-- end hero -->			
+
+			<!-- Intro -->
+			<section id="intro" class="section-intro intro">	
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-10">
+							<div class="animate">
+								<h3 class="intro__subtitle"><span style="font-weight:900; color:#ffc62d; font-size:35px;">KUJENGA</span> </br></br> <span style="color:; font-size:15px;">(Swahili)</span></br> <span style="color:;">construire</span>  </br> <span style="color:;">édifier</span></br> <span style="color:;">bâtir</span></h3>
+							</div>
+							<div class="animate">
+								<p class="intro__text text-large">Expert mahorais engagé à vos côtés pour vos projets d’architecture, <span style="font-weight:600;">Kujenga</span> apporte des solutions viables en s’adaptant à vos contraintes et  vos besoins afin d’en garantir la concrétisation.</p>
+							</div>
+						</div>
+					</div>
+			</section> <!-- end intro -->
+
+			<!-- Team -->
+			<section class="section-works pt-0 pb-48" id="team">
+				<div class="container">
+
+					<div id="project-grid" class="project-grid project-grid--2-col">
+
+						<article class="grid-item project hover-shrink featured">
+							<div class="project__container">
+								<div class="project__url">
+									<figure class="project__img-holder hover-shrink--shrink">
+										<img src="{% static 'img/team/DANIA1.jpg' %}" class="project__img hover-shrink--zoom" alt="project 2">
+									</figure>
+								</div>
+								<a href="{% url 'Main:Profile_Dania'%}" class="project__description-wrap">
+									<div class="project__description">
+										<h3 class="project__title">Dania Soumaïla </br> <span style="font-weight:300 !important;">Fondatrice</span></h3>
+										<span class="project__category" style="font-style:italic !important; color:black">"C'est que de la logistique"</span>
+									</div>
+								</a>
+							</div>
+						</article>
+
+						<article class="grid-item project hover-shrink featured branding product">
+							<div class="project__container">
+								<div class="project__url">
+									<figure class="project__img-holder hover-shrink--shrink">
+										<img src="{% static 'img/team/INOU2.jpg' %}" class="project__img hover-shrink--zoom" alt="project 1">
+									</figure>
+								</div>
+								<a href="{% url 'Main:Profile_Inou'%}" class="project__description-wrap">
+									<div class="project__description">
+										<h3 class="project__title">Inoussia Ahmed</br> <span style="font-weight:300 !important;">Cheffe de projet</span></h3>
+										<span class="project__category" style="font-style:italic !important; color:black;">"C'est stylé ça !"</span>
+									</div>
+								</a>
+							</div>
+						</article>
+
+
+
+						<article class="grid-item project hover-shrink featured product">
+							<div class="project__container">
+								<div class="project__url">
+									<figure class="project__img-holder hover-shrink--shrink">
+										<img src="{% static 'img/team/HOUZA8.jpg' %}" class="project__img hover-shrink--zoom" alt="project 3">
+									</figure>
+								</div>
+								<a href="{% url 'Main:Profile_Houza' %}"  class="project__description-wrap">
+									<div class="project__description">
+										<h3 class="project__title">Houzaïra Boina</br> <span style="font-weight:300 !important;">Partenaire clé, fondatrice de Badcoffy</span></h3>
+										<span class="project__category" style="font-style:italic !important; color:black;">“Ca manque de profondeur”</span>
+									</div>
+								</a>
+							</div>
+						</article>
+
+						<article class="grid-item project hover-shrink featured branding">
+							<div class="project__container">
+								<div class="project__url">
+									<figure class="project__img-holder hover-shrink--shrink">
+										<img src="{% static 'img/team/MAMBADI8.jpg' %}" class="project__img hover-shrink--zoom" alt="project 4">
+									</figure>
+								</div>
+								<a href="{% url 'Main:Profile_Mambadi'%}"  class="project__description-wrap">
+									<div class="project__description">
+										<h3 class="project__title">Mambadi Issoufi</br> <span style="font-weight:300 !important;">Partenaire clé, fondateur de Mayotte Conseil Conception Ingénierie</span></h3>
+										<span class="project__category" style="font-style:italic !important; color:black;">“Ca va pas tenir ça !”</span>
+									</div>
+								</a>
+							</div>
+						</article>
+
+					</div> <!-- end project grid -->
+
+				</div>
+			</section> <!-- end works -->
+
+			<!-- Services -->
+			<section class="section-services pt-40" id="services">
+				<div class="container">
+					<div class="grid-item project">
+						<span class="hero__scroll-down-link title-link animate-letters" style="margin-left:-1rem;">Nos services</span>
+					</div>
+					<div class="row justify-content-center">
+						<div class="col-lg-10">
+							<div class="services js-services-01">
+
+								<ul class="services-list">
+									<li class="services-list__item services-list__item--is-active">
+										<span class="services-list__label">Particulier</span>
+									</li>
+									<li class="services-list__item">
+										<span class="services-list__label">Entreprises</span>
+									</li>
+									<li class="services-list__item">
+										<span class="services-list__label">Collectivités</span>
+									</li>
+								</ul>
+
+								<ul class="services-content">
+									<li class="services-content__item services-content__item--is-active">
+										Conception • esquisse • Permis de construire • Suivi de chantier
+									</li>
+									<li class="services-content__item">
+										Conception • esquisse • Étude de projet • Permis de construire • Suivi de chantier
+									</li>
+									<li class="services-content__item">
+										Conception • esquisse • Étude de projet • Permis de construire • Suivi de chantier • Dossier de consultation
+								</ul>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</section> <!-- end services -->	
+
+			<!-- From Blog -->
+			<section class="section-from-blog" id="work">
+				<div class="container">
+
+					<div class="row justify-content-center">
+						<div class="col-lg-10">
+							<div class="title-row">
+								<h2 class="section-title">Les projets accompagnés par Kujenga</h2>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- .container -->
+
+				<!-- Slider -->
+				<div class="slick-slider blog-slider">
+					{% for projet in Projets %}
+					<div class="slick-slider-item">
+						<article class="entry hover-shrink" itemscope itemtype="http://schema.org/Article">
+							<div class="entry__body">
+								<a href="{% url 'Main:Project' projet.pk %}" class="entry__url"></a>
+								<figure class="entry__img-holder bg-gradient-bottom hover-shrink--shrink">	
+									<img src="{{projet.image.url}}" class="entry__img hover-shrink--zoom" itemprop="image" alt="">
+								</figure>
+
+								<div class="entry__info-holder">
+									<h4 class="entry__title title-underline" itemprop="headline">
+										{{projet.titre}}
+									</h4>
+									<div class="entry__meta">
+										<span class="entry__meta-item entry__meta-date" itemprop="datePublished" content="2020-25-8">{{projet.date}}</span>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					{% endfor %}
+				</div>
+
+			</section> <!-- end from blog -->
+
+		</main> <!-- end content wrap -->
+
+			<!-- Footer -->
+		<footer class="footer bg-dark" style="background-image:none !important;" itemtype="http://schema.org/WPFooter" itemscope>
+			<div class="container">
+				<div class="footer__cta">
+					<div class="row justify-content-center">
+						<div class="col-lg-8">
+							<div class="widget widget-cta text-center">
+								<h3 class="widget-cta__title mb-32">Vous avez un projet ?
+									<a href="contact.html" class="widget-cta__link">
+										<span class="animate-letters" style="color:#FCC10D !important">On s'y met !</span>
+									</a>
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer__widgets">
+					<div class="row">
+
+						<div class="col-lg-8 col-md-6">
+							<div class="widget widget-about-us">
+								<address class="widget-about-us__address">18 Chemin Majimbini,<br>
+								97600 Mamoudzou</address>
+								<a href="mailto:contact@kujenga-architectes.com" class="widget-about-us__email">contact@kujenga-architectes.com</a>
+								<a href="tel:+33664689138" class="widget-about-us__phone">+33 6 64 68 91 38</a>
+							</div>
+						</div> <!-- end about us -->
+
+						<div class="col-lg-2 col-md-3">
+							<div class="widget widget-nav-menu">
+								<ul>
+									<li><a href="#">Portfolio</a></li>
+									<li><a href="#">L'équipe</a></li>
+									<li><a href="#">Contact</a></li>
+								</ul>
+							</div>
+						</div> <!-- end widget nav menu
+
+						<div class="col-lg-2 col-md-3">
+							<div class="widget widget-nav-menu">
+								<ul>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Linkedin</a></li>
+								</ul>
+							</div>
+						</div> end widget nav menu -->-->
+
+					</div>
+				</div>
+			</div> <!-- end container -->
+
+			<div class="footer__bottom">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<a href="{% url 'Main:Home' %}" class="logo__url">
+								<img class="logo" src="{% static 'img/Logo_noir.png' %}" style="width:150px;" alt="logo" itemtype="http://schema.org/Organization" itemscope>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div> <!-- end footer bottom -->
+
+		</footer> <!-- end footer -->
+
+		<div class="footer-placeholder"></div>
+
+	</div> <!-- end main wrap -->
+	<!-- JS Scripts -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/scripts.min.js' %}"></script>
+
+
+		
+</body>
+</html>

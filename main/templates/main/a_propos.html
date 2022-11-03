@@ -1,0 +1,503 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Dorya | Contact</title>
+
+	<meta charset="utf-8">
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="">
+
+	<!-- Google Fonts -->
+	<link href='//fonts.googleapis.com/css?family=Montserrat:700,400|Archivo:400,400i,700' rel='stylesheet'>
+
+	<!-- Css -->
+	<link rel="stylesheet" href="{% static 'css/style.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="{%static 'img/favicon.ico'%}">
+	<link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/apple-touch-icon-72x72.png' %}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/apple-touch-icon-114x114.png' %}">
+
+</head>
+
+<style>
+	.logo {
+	max-height: 200px;
+	position: relative; }
+
+	#ethnic {
+		transition: fill 0.3s ease-in-out 0.1s;
+	}
+
+	#ethnic:hover {
+		fill:#ffc62d;
+		cursor: pointer;
+	}
+
+	.services-list {
+	list-style: none;
+	position: relative;
+	width: 100%; }
+	@media only screen and (min-width: 1025px) {
+		.services-list {
+			flex: 0 0 50%;
+			max-width: 50%;
+			padding-right: 40px; } }
+	@media only screen and (max-width: 1024px) {
+		.services-list {
+			margin-bottom: 56px; } }
+	.services-list__item {
+		position: relative;
+		font-family: "aktiv-grotesk-extended", "Montserrat", sans-serif;
+		font-weight: 700;
+		color: #b5b5b5;
+		cursor: pointer;
+		letter-spacing: -0.05em;
+		transition: all 0.4s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+		font-size: 34px;
+		font-size: 2.125rem; }
+		@media (prefers-reduced-motion: reduce) {
+			.services-list__item {
+				transition: none; } }
+		@media only screen and (min-width: 1025px) {
+			.services-list__item {
+				font-size: 56px;
+				font-size: 3.5rem; } }
+		.services-list__item:hover, .services-list__item--is-active {
+			color: #000000; }
+			.services-list__item:hover span::after, .services-list__item--is-active span::after {
+				width: 100%; }
+	.services-list__label {
+		position: relative;
+		z-index: 1; }
+		.services-list__label::after {
+			content: '';
+			z-index: -1;
+			position: absolute;
+			display: block;
+			bottom: 10px;
+			height: 16px;
+			width: 0;
+			background-color: #296C49;
+			transition: all 0.4s cubic-bezier(0.25, 0.74, 0.22, 0.99); }
+			@media only screen and (min-width: 1025px) {
+				.services-list__label::after {
+					bottom: 20px; } }
+
+.project {
+	position: relative;
+	overflow: hidden;
+	padding: 30px; }
+	@media only screen and (min-width: 1025px) {
+		.project {
+			padding: 70px; }
+			.project:nth-child(2) {
+				margin-top: 140px; } }
+	.project-slide {
+		margin: 0 19px; }
+	.project__container {
+		position: relative; }
+	.project__img-holder {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden; }
+	.project__img {
+		width: 100%;
+		filter: blur(15px);
+		transition: all 0.4s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+		overflow: hidden;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden; }
+		@media (prefers-reduced-motion: reduce) {
+			.project__img {
+				transition: none; } }
+	.project__title, .project__category {
+		opacity: 0;
+		transition: opacity 0.2s cubic-bezier(0.07, 0.98, 0, 0.96); }
+		@media (prefers-reduced-motion: reduce) {
+			.project__title, .project__category {
+				transition: none; } }
+	.project__description-wrap {
+		position: absolute;
+		opacity: 0;
+		bottom: 40px;
+		left: 40px;
+		display: inline-block;
+		width: 78%;
+		max-width: 260px;
+		-webkit-clip-path: inset(0 0 0 100%);
+		clip-path: inset(0 0 0 100%);
+		transition: opacity 0.2s 0.3s, -webkit-clip-path 0s 0.3s;
+		transition: opacity 0.2s 0.3s, clip-path 0s 0.3s;
+		transition: opacity 0.2s 0.3s, clip-path 0s 0.3s, -webkit-clip-path 0s 0.3s; }
+		@media (prefers-reduced-motion: reduce) {
+			.project__description-wrap {
+				transition: none; } }
+	.project__description {
+		position: relative;
+		padding: 16px 20px; }
+		.project__description:after {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: #fff;
+			transform-origin: 0 50%;
+			transform: scaleX(0);
+			transition: transform 0.35s cubic-bezier(0.07, 0.98, 0, 0.96); }
+			@media (prefers-reduced-motion: reduce) {
+				.project__description:after {
+					transition: none; } }
+	.project:hover .project__description-wrap {
+		opacity: 1;
+		filter: blur(0px);
+		-webkit-clip-path: inset(0 0 0 0);
+		clip-path: inset(0 0 0 0);
+		transition: -webkit-clip-path 0.8s cubic-bezier(0.07, 0.98, 0, 0.96);
+		transition: clip-path 0.8s cubic-bezier(0.07, 0.98, 0, 0.96);
+		transition: clip-path 0.8s cubic-bezier(0.07, 0.98, 0, 0.96), -webkit-clip-path 0.8s cubic-bezier(0.07, 0.98, 0, 0.96); }
+	.project:hover .project__description:after {
+		transform-origin: 100% 50%;
+		transform: scaleX(1);
+		transition: transform 0.7s cubic-bezier(0.07, 0.98, 0, 0.96); }
+		@media (prefers-reduced-motion: reduce) {
+			.project:hover .project__description:after {
+				transition: none; } }
+	.project:hover .project__title,
+	.project:hover .project__category {
+		opacity: 1; }
+	.project__url {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100%; }
+	.project__title {
+		font-size: 1.25rem;
+		position: relative;
+		z-index: 2; }
+	.project__category {
+		position: relative;
+		z-index: 2;
+		display: inline-block;
+		margin-top: 16px;
+		font-size: 0.875rem;
+		font-weight: 700; }
+
+	.hover-shrink--shrink, .hover-shrink--zoom {
+	transition: all 0.2s ease-in-out; }
+	@media (prefers-reduced-motion: reduce) {
+		.hover-shrink--shrink, .hover-shrink--zoom {
+			transition: none; } }
+
+	.hover-shrink:hover .hover-shrink--shrink {
+		transform: scale(0.95);
+		filter: blur(0px);
+		}
+
+	.project__img:hover {
+		filter: blur(0px);
+	}
+
+	.contact_information {
+		color:black !important;
+		transition:0.2s;
+	}
+
+	.contact_information:hover {
+		color: #fcc10c !important;
+	}
+
+	.reveal{
+		  position: relative;
+		  transform: translateY(150px);
+		  opacity: 0;
+		  transition: 2s all ease;
+		}
+
+		.reveal.active{
+		  transform: translateY(0);
+		  opacity: 1;
+		}
+
+	.reveal2{
+		  position: relative;
+		  transform: translateY(150px);
+		  opacity: 0;
+		  transition: 2s all ease;
+		}
+
+		.reveal2.active{
+		  transform: translateY(0);
+		  opacity: 1;
+		}
+
+		.btn {
+			background-color:#fcc10c;
+		}
+
+		.btn:hover {
+			background-color:transparent;
+			border-color:#fcc10c;
+			color:#fcc10c;
+		}
+
+
+</style>
+
+<body class="single-project" id="home" itemscope itemtype="http://schema.org/WebPage">
+
+	<!-- Preloader -->
+	<div class="loader-mask">
+		<div class="loader">
+			<img class="loader-logo logo" src="{% static 'img/logo_blanc_seul.png' %}" alt="logo"
+				itemtype="http://schema.org/Organization" itemscope>
+				<div class="loader-bar" style="margin-top:30px;"><span></span></div>
+			"Loading..."
+		</div>
+	</div>
+
+	<!-- Header -->
+	<header class="nav header" itemtype="http://schema.org/WPHeader" itemscope>
+
+		<div class="nav__holder nav--sticky" id="nav--sticky">
+			<div class="container nav__container">
+				<div class="flex-parent">
+
+					<div class="nav__header clearfix">
+						<!-- Logo -->
+						<div class="logo-wrap local-scroll">
+							<a href="{% url 'Main:Home' %}" class="logo__url">
+								<img class="logo logo--dark" style="height:60px !important; padding-top:20px;" src="{% static 'img/Logo_4couleurs.png' %}" alt="logo" itemtype="http://schema.org/Organization" itemscope>
+							</a>
+						</div>
+
+						<button type="button" class="nav__icon-toggle" id="nav__icon-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="nav__icon-toggle-bar"></span>
+							<span class="nav__icon-toggle-bar"></span>
+							<span class="nav__icon-toggle-bar"></span>
+						</button>
+					</div> <!-- end nav-header -->
+
+					<nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope">
+						<ul class="nav__menu local-scroll" id="onepage-nav">
+							<li>
+								<a href="{% url 'Main:Home' %}" class="nav-link">Accueil</a>
+							</li>
+							<li>
+								<a href="{% url 'Main:A_propos' %}" class="nav-link active">Qui sommes-nous ?</a>
+							</li>
+							<li>
+								<a href="{% url 'Main:Portfolio' %}" class="nav-link">Portfolio</a>
+							</li>
+							<li>
+								<a href="{% url 'Main:Team' %}" class="nav-link ">L'équipe</a>
+							</li>
+							<li>
+								<a href="{% url 'Main:Contact' %}" class="nav-link">Contact</a>
+							</li>
+						</ul> <!-- end menu -->
+
+					</nav> <!-- end nav-wrap -->
+
+				</div> <!-- end flex-parent -->
+			</div> <!-- end container -->
+
+		</div>
+	</header> <!-- end header -->
+
+	<div class="main-wrap">
+		<main class="content-wrap">
+
+			<!-- Page Title -->
+			<section class="page-title">
+
+				 <div class="container" style="margin-top:5rem;">
+					<div class="" style="text-align:center;">
+                        <img style="max-width:150px;" src="{% static 'img/logo_jamaïque.png' %}" >
+                    </div>
+				</div>
+
+				<div class="container" style="margin-top:5rem;">
+					<div class="">
+						<h1 class="" style="text-align:center;">Qui sommes-nous ? </h1>
+					</div>
+				</div>
+
+                <div class="container" style="margin-top:7rem;">
+					<div class="reveal">
+						<p class="page-title__subtitle" style="font-size:30px; text-align:center;"> Fondé par Dania Soumaïla, architecte HMONP, Kujenga Architectes est un collectif de jeunes professionnels dynamiques ayant à cœur de rendre accessible à tous un processus de construction efficace et moderne.</p>
+                    </div>
+				</div>
+
+				 <div class="container" style="margin-top:5rem;">
+					<div class="reveal" style="text-align:center;">
+                        <img style="max-width:80px;" src="{% static 'img/logo_volcan.png' %}" >
+                    </div>
+				</div>
+
+                <div class="container" style="margin-top:7rem;">
+					<div class="reveal">
+						<p class="page-title__subtitle" style="font-size:30px; text-align:center;"> L’ADN de Kujenga réside dans l’énergie déployée pour finaliser vos projets et vous accompagner dans la réalisation de vos idées. Implantée localement, l’agence trouve des solutions adaptées à vos contraintes et vous accompagne à chaque étape de votre projet.</p>
+                    </div>
+				</div>
+
+				<div class="container" style="margin-top:5rem;">
+					<div class="reveal" style="text-align:center;">
+                        <img style="max-width:80px;" src="{% static 'img/logo_forêt.png' %}" >
+                    </div>
+				</div>
+
+				<div class="container" style="margin-top:7rem;">
+					<div class="reveal">
+						<p class="page-title__subtitle" style="font-size:30px; text-align:center;"> L’agence articule les contraintes urbaines, les techniques et les savoir-faire locaux pour proposer les solutions les plus pertinentes pour la mise en œuvre des projets.</p>
+                    </div>
+				</div>
+
+				<div class="container" style="margin-top:5rem;">
+					<div class="reveal" style="text-align:center;">
+                        <img style="max-width:80px;" src="{% static 'img/logo_terre.png' %}" >
+                    </div>
+				</div>
+
+				<div class="container" style="margin-top:7rem; margin-bottom:10rem;">
+					<div class="reveal">
+						<p class="page-title__subtitle" style="font-size:30px; text-align:center;"> Avec une approche pluridisciplinaire, mêlant architecture, urbanisme et ingénierie de construction, Kujenga comprend votre projet dans son espace et propose des solutions alliant l’esthétisme et la fonctionnalité en respectant votre budget.</p>
+                    </div>
+				</div>
+
+			</section> <!-- end page title -->
+
+
+
+
+
+		</main> <!-- end content wrap -->
+
+			<!-- Footer -->
+		<footer class="footer bg-dark" style="background-image:none !important;" itemtype="http://schema.org/WPFooter" itemscope>
+			<div class="container">
+				<div class="footer__cta">
+					<div class="row justify-content-center">
+						<div class="col-lg-8">
+							<div class="widget widget-cta text-center">
+								<h3 class="widget-cta__title mb-32">Vous avez un projet ?
+									<a href="contact.html" class="widget-cta__link">
+										<span class="animate-letters" style="color:#FCC10D !important">On s'y met !</span>
+									</a>
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer__widgets">
+					<div class="row">
+
+						<div class="col-lg-8 col-md-6">
+							<div class="widget widget-about-us">
+								<address class="widget-about-us__address">18 Chemin Majimbini,<br>
+								97600 Mamoudzou</address>
+								<a href="mailto:contact@kujenga-architectes.com" class="widget-about-us__email">contact@kujenga-architectes.com</a>
+								<a href="tel:+33664689138" class="widget-about-us__phone">+33 6 64 68 91 38</a>
+							</div>
+						</div> <!-- end about us -->
+
+						<div class="col-lg-2 col-md-3">
+							<div class="widget widget-nav-menu">
+								<ul>
+									<li><a href="#">Portfolio</a></li>
+									<li><a href="#">L'équipe</a></li>
+									<li><a href="#">Contact</a></li>
+								</ul>
+							</div>
+						</div> <!-- end widget nav menu
+
+						<div class="col-lg-2 col-md-3">
+							<div class="widget widget-nav-menu">
+								<ul>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Linkedin</a></li>
+								</ul>
+							</div>
+						</div> end widget nav menu -->-->
+
+					</div>
+				</div>
+			</div> <!-- end container -->
+
+			<div class="footer__bottom">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<a href="{% url 'Main:Home' %}" class="logo__url">
+								<img class="logo" src="{% static 'img/Logo_noir.png' %}" style="width:150px;" alt="logo" itemtype="http://schema.org/Organization" itemscope>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div> <!-- end footer bottom -->
+
+		</footer> <!-- end footer -->
+
+		<div class="footer-placeholder"></div>
+
+
+	</div> <!-- end main wrap -->
+
+
+	<!-- JS Scripts -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/scripts.min.js' %}"></script>
+
+	<script>
+		 function reveal() {
+	  var reveals = document.querySelectorAll(".reveal");
+
+	  for (var i = 0; i < reveals.length; i++) {
+		var windowHeight = window.innerHeight;
+		var elementTop = reveals[i].getBoundingClientRect().top;
+		var elementVisible = 150;
+
+		if (elementTop < windowHeight - elementVisible) {
+		  reveals[i].classList.add("active");
+		} else {
+		  reveals[i].classList.remove("active");
+		}
+	  }
+	}
+
+	window.addEventListener("scroll", reveal);
+
+		 function reveal2() {
+	  var reveals2 = document.querySelectorAll(".reveal2");
+
+	  for (var i = 0; i < reveals2.length; i++) {
+		var windowHeight = window.innerHeight;
+		var elementTop = reveals2[i].getBoundingClientRect().top;
+		var elementVisible = 0;
+
+		if (elementTop < windowHeight - elementVisible) {
+		  reveals2[i].classList.add("active");
+		} else {
+		  reveals2[i].classList.remove("active");
+		}
+	  }
+	}
+
+	window.addEventListener("scroll", reveal2);
+	</script>
+
+</body>
+</html>
