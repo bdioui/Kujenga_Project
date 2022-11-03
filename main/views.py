@@ -10,7 +10,7 @@ def Index(request):
 def Home(request):
     Projets = Projet.objects.all()
     context = {'Projets':Projets,}
-    return render(request, 'Main/index.html', context)
+    return render(request, 'main/index.html', context)
 
 def Contact(request):
     context = {}
@@ -32,43 +32,43 @@ def Contact(request):
             send_mail(subject, message, email_from, recipient_list)
 
             context['prénom'] = prénom
-            return render(request, 'Main/message_reçu.html', context)
+            return render(request, 'main/message_reçu.html', context)
         else:
             form = message_form()
             context['form'] = form
-            return render(request, 'Main/contact.html', context)
+            return render(request, 'main/contact.html', context)
     else:
         form = message_form(request.POST)
         context['form'] = form
-        return render(request, 'Main/contact.html', context)
+        return render(request, 'main/contact.html', context)
 
-    return render(request, 'Main/contact.html')
+    return render(request, 'main/contact.html')
 
 def Team(request):
-    return render(request, 'Main/Team.html')
+    return render(request, 'main/Team.html')
 
 def Portfolio(request):
     projets = Projet.objects.all()
     context = {'projets':projets}
-    return render(request, 'Main/Portfolio.html', context)
+    return render(request, 'main/Portfolio.html', context)
 
 def Project(request, pk):
     projet= Projet.objects.get(pk=pk)
     context = {}
     context['Projet'] = projet
-    return render(request, 'Main/projet.html', context)
+    return render(request, 'main/projet.html', context)
 
 def A_propos(request):
-    return render(request, 'Main/a_propos.html')
+    return render(request, 'main/a_propos.html')
 
 def Profile_Dania(request):
-    return render(request, 'Main/profile_Dania.html')
+    return render(request, 'main/profile_Dania.html')
 
 def Profile_Inou(request):
-    return render(request, 'Main/profile_Inou.html')
+    return render(request, 'main/profile_Inou.html')
 
 def Profile_Mambadi(request):
-    return render(request, 'Main/profile_Mambadi.html')
+    return render(request, 'main/profile_Mambadi.html')
 
 def Profile_Houza(request):
-    return render(request, 'Main/profile_Houza.html')
+    return render(request, 'main/profile_Houza.html')
