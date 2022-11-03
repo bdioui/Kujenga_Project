@@ -217,7 +217,7 @@
 	<!-- Preloader -->
 	<div class="loader-mask">
 		<div class="loader">
-			<img class="loader-logo logo" src="{% static 'img/logo_blanc_seul.png' %}" alt="logo"
+			<img class="loader-logo logo" src="{% static 'img/Logo_blanc_seul.png' %}" alt="logo"
 				itemtype="http://schema.org/Organization" itemscope>
 				<div class="loader-bar" style="margin-top:30px;"><span></span></div>
 			"Loading..."
@@ -547,9 +547,9 @@
 						<div class="col-lg-2 col-md-3">
 							<div class="widget widget-nav-menu">
 								<ul>
-									<li><a href="#">Portfolio</a></li>
-									<li><a href="#">L'équipe</a></li>
-									<li><a href="#">Contact</a></li>
+									<li><a href="{% url 'main/Portfolio' %}">Portfolio</a></li>
+									<li><a href="{% url 'main/Team' %}">L'équipe</a></li>
+									<li><a href="{% url 'main/Contact' %}">Contact</a></li>
 								</ul>
 							</div>
 						</div> <!-- end widget nav menu

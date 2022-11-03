@@ -279,7 +279,7 @@
 						<!-- Logo -->
 						<div class="logo-wrap local-scroll">
 							<a href="{% url 'main:Home' %}" class="logo__url">
-								<img class="logo logo--dark" style="height:60px !important; padding-top:20px;" src="{% static 'img/Logo_4couleurs.png' %}" alt="logo" itemtype="http://schema.org/Organization" itemscope>
+								<img class="logo logo--dark" style="height:60px !important;" src="{% static 'img/Logo_4couleurs.png' %}" alt="logo" itemtype="http://schema.org/Organization" itemscope>
 							</a>
 						</div>
 
@@ -417,9 +417,9 @@
 						<div class="col-lg-2 col-md-3">
 							<div class="widget widget-nav-menu">
 								<ul>
-									<li><a href="#">Portfolio</a></li>
-									<li><a href="#">L'équipe</a></li>
-									<li><a href="#">Contact</a></li>
+									<li><a href="{% url 'main/Portfolio' %}">Portfolio</a></li>
+									<li><a href="{% url 'main/Team' %}">L'équipe</a></li>
+									<li><a href="{% url 'main/Contact' %}">Contact</a></li>
 								</ul>
 							</div>
 						</div> <!-- end widget nav menu
