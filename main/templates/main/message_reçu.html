@@ -328,7 +328,7 @@
 
 		</main> <!-- end content wrap -->
 
-		<!-- Footer -->
+			<!-- Footer -->
 		<footer class="footer bg-dark" style="background-image:none !important;" itemtype="http://schema.org/WPFooter" itemscope>
 			<div class="container">
 				<div class="footer__cta">
@@ -359,9 +359,9 @@
 						<div class="col-lg-2 col-md-3">
 							<div class="widget widget-nav-menu">
 								<ul>
-									<li><a href="#">Portfolio</a></li>
-									<li><a href="#">L'équipe</a></li>
-									<li><a href="#">Contact</a></li>
+									<li><a href="{% url 'main:Portfolio' %}">Portfolio</a></li>
+									<li><a href="{% url 'main:Team' %}">L'équipe</a></li>
+									<li><a href="{% url 'main:Contact' %}">Contact</a></li>
 								</ul>
 							</div>
 						</div> <!-- end widget nav menu
