@@ -8,8 +8,8 @@
 	<meta charset="utf-8">
 	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="description" content="">
-	
+	<meta name="description" content="Expert mahorais engagé à vos côtés pour vos projets d’architecture, l'agence Kujenga apporte des solutions viables en s’adaptant à vos contraintes et vos besoins afin d’en garantir la concrétisation.">
+
 	<!-- Google Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Montserrat:700,400|Archivo:400,400i,700' rel='stylesheet'>
 
@@ -18,14 +18,17 @@
 	<link rel="stylesheet" href="{% static 'css/custom.css' %}" />
 
 	<!-- Favicons -->
-	<link rel="shortcut icon" href="{%static 'img/Logo_jamaïque.png'%}">
-	<link rel="apple-touch-icon" href="{% static 'img/Logo_jamaïque.png' %}">
-	<link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/Logo_jamaïque.png' %}">
-	<link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/Logo_jamaïque.png' %}">
+	<link rel="shortcut icon" href="{% static 'img/logo.png' %}">
+	<link rel="icon" href="{% static 'img/logo_blanc_seul.png' %}">
 
 </head>
 
 <style>
+
+	html {
+		scroll-behavior:smooth;
+	}
+
 	.logo {
 	max-height: 200px;
 	position: relative; }
@@ -83,7 +86,7 @@
 			bottom: 10px;
 			height: 16px;
 			width: 0;
-			background-color: #296C49;
+			background-color: #ffc62d;
 			transition: all 0.4s cubic-bezier(0.25, 0.74, 0.22, 0.99); }
 			@media only screen and (min-width: 1025px) {
 				.services-list__label::after {
@@ -209,6 +212,282 @@
 		filter: blur(0px);
 	}
 
+	.reveal{
+	  position: relative;
+	  transform: translateY(250px);
+	  opacity: 0;
+	  transition: 2s all ease;
+	}
+
+	.reveal.active{
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+
+	.reveal_fast{
+	  position: relative;
+	  transform: translateY(250px);
+	  opacity: 0;
+	  transition: 0.5s all ease;
+	}
+
+	.reveal_fast.active{
+	  transform: translateY(0);
+	  opacity: 1;
+	  opacity: 1;
+	}
+
+	.pointer{
+	cursor:pointer;
+	}
+
+	#down-arrow {
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	cursor:pointer;
+
+}
+
+	.arrow {
+	  border: solid black;
+	  border-width: 0 3px 3px 0;
+	  display: inline-block;
+	  padding: 8px;
+	}
+
+	.arrow:hover {
+	  padding: 15px;
+	  transition:ease 0.3s;
+	}
+
+	.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.services-content {
+	list-style: none;
+	position: relative;
+	width: 100%; }
+	@media only screen and (min-width: 1025px) {
+		.services-content {
+			flex: 0 0 50%;
+			max-width: 50%; } }
+	.services-content__item {
+		font-size: 28px;
+		font-size: 1.75rem;
+		margin-bottom: 48px;
+		line-height: 1.3;
+		color: #b5b5b5;
+		transition: all 0.4s cubic-bezier(0.25, 0.74, 0.22, 0.99); }
+		@media (prefers-reduced-motion: reduce) {
+			.services-content__item {
+				transition: none; } }
+		.services-content__item:last-child {
+			margin-bottom: 0; }
+		@media only screen and (min-width: 1025px) {
+			.services-content__item {
+				font-size: 40px;
+				font-size: 1.5rem; } }
+		.services-content__item--is-active {
+			color: #000000; }
+
+	.description {
+		color:black !important;
+		transition:ease 0.2s;
+		font-size:1.5rem;
+
+	}
+
+	.description:hover {
+		color:black;
+
+	}
+
+	.slick-slider {
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
+	touch-action: pan-y;
+	-webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	margin: 0;
+	padding: 0; }
+
+.slick-list:focus {
+	outline: 0; }
+
+.slick-list.dragging {
+	cursor: pointer;
+	cursor: hand; }
+
+.slick-slider .slick-list, .slick-slider .slick-track {
+	transform: translate3d(0, 0, 0); }
+
+.slick-track {
+	position: relative;
+	top: 0;
+	left: 0;
+	display: block;
+	margin-left: auto;
+	margin-right: auto; }
+
+.slick-track:after, .slick-track:before {
+	display: table;
+	content: ''; }
+
+.slick-track:after {
+	clear: both; }
+
+.slick-loading .slick-track {
+	visibility: hidden; }
+
+.slick-slide {
+	display: none;
+	float: left;
+	height: 100%;
+	min-height: 1px; }
+
+[dir=rtl] .slick-slide {
+	float: right; }
+
+.slick-slide img {
+	display: block; }
+
+.slick-slide.slick-loading img {
+	display: none; }
+
+.slick-slide.dragging img {
+	pointer-events: none; }
+
+.slick-initialized .slick-slide {
+	display: block; }
+
+.slick-loading .slick-slide {
+	visibility: hidden; }
+
+.slick-vertical .slick-slide {
+	display: block;
+	height: auto;
+	border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+	display: none; }
+
+.slick-dots {
+	width: 100%;
+	margin: 0;
+	list-style: none;
+	text-align: center; }
+	.slick-dots li {
+		position: relative;
+		display: inline-block;
+		cursor: pointer;
+		margin: 0 7px;
+		padding: 0;
+		transition: all 0.4s cubic-bezier(0.25, 0.74, 0.22, 0.99); }
+		@media (prefers-reduced-motion: reduce) {
+			.slick-dots li {
+				transition: none; } }
+		.slick-dots li button {
+			width: 14px;
+			height: 14px;
+			border-radius: 50%;
+			font-size: 0;
+			line-height: 0;
+			padding: 0;
+			outline: 0;
+			border: 0;
+			display: block;
+			cursor: pointer;
+			color: transparent;
+			background-color: #E9E9E9; }
+			.slick-dots li button:focus, .slick-dots li button:hover {
+				outline: 0;
+				background-color: #ffc62d;
+				border-color: transparent; }
+		.slick-dots li.slick-active button,
+		.slick-dots li.slick-active button:hover {
+			background-color: #ffc62d;
+			border-color: transparent; }
+	.slick-dots > li {
+		display: inline-block; }
+		.slick-dots > li:only-child {
+			display: none; }
+
+.slick-slider .slick-prev {
+	left: 0; }
+
+.slick-slider .slick-next {
+	right: 0; }
+
+.slick-slider .slick-next,
+.slick-slider .slick-prev {
+	font-size: 0;
+	line-height: 0;
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	display: block;
+	padding: 0;
+	transform: translateY(-50%);
+	cursor: pointer;
+	color: transparent;
+	border: none;
+	outline: none;
+	background: transparent; }
+	.slick-slider .slick-next::before,
+	.slick-slider .slick-prev::before {
+		font-family: dorya;
+		font-size: 35px;
+		line-height: 1;
+		color: #FCC10C;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale; }
+
+.slick-slider .slick-prev::before {
+	content: "\e900"; }
+
+.slick-slider .slick-next::before {
+	content: "\e901"; }
+
+.slick-slider-item {
+	padding: 0 20px; }
+
+	@media (min-width: 1000px) {
+	  /* les règles de style suivantes s'appliqueront uniquement lorsque la largeur de l'écran sera supérieure à 1000 pixels */
+	  .services-content__item {
+		font-size: 20px !important;
+	  }
+
+	}
+
+	@media (max-width: 999px) {
+	  /* les règles de style suivantes s'appliqueront uniquement lorsque la largeur de l'écran sera supérieure à 1000 pixels */
+	  .services-content__item {
+		font-size: 15px !important;
+	  }
+	  .slick-slider-item {
+	  	max-width:360px;
+	  	margin-left:1rem;
+	  }
+	  .description {
+	  	display:None;
+	  }
+	}
+
+
 
 
 </style>
@@ -217,7 +496,7 @@
 	<!-- Preloader -->
 	<div class="loader-mask">
 		<div class="loader">
-			<img class="loader-logo logo" src="{% static 'img/Logo_blanc_seul.png' %}" alt="logo"
+			<img class="loader-logo logo" src="{% static 'img/logo_blanc_seul.png' %}" alt="logo"
 				itemtype="http://schema.org/Organization" itemscope>
 				<div class="loader-bar" style="margin-top:30px;"><span></span></div>
 			"Loading..."
@@ -227,7 +506,7 @@
 	<!-- Header -->
 	<header class="nav header" itemtype="http://schema.org/WPHeader" itemscope>
 
-		<div class="nav__holder nav--sticky" id="nav--sticky">
+		<div class="nav__holder nav--sticky" style="box-shadow:none;" id="nav--sticky">
 			<div class="container nav__container">
 				<div class="flex-parent">
 
@@ -235,7 +514,7 @@
 						<!-- Logo -->
 						<div class="logo-wrap local-scroll">
 							<a href="{% url 'main:Home' %}" class="logo__url">
-								<img class="logo logo--dark" style="height:60px !important; padding-top:20px;" src="{% static 'img/Logo_4couleurs.png' %}" alt="logo" itemtype="http://schema.org/Organization" itemscope>
+								<img class="logo logo--dark" style="height:80px !important; padding-top:20px;" src="{% static 'img/Logo_4couleurs.png' %}" alt="logo" itemtype="http://schema.org/Organization" itemscope>
 							</a>
 						</div>
 
@@ -246,21 +525,15 @@
 							<span class="nav__icon-toggle-bar"></span>
 						</button>
 					</div> <!-- end nav-header -->
-					
+
 					<!-- Navbar -->
-					<nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope">              
+					<nav id="navbar-collapse" style="padding-bottom:15px !important;" class="nav__wrap collapse navbar-collapse" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope">
 						<ul class="nav__menu local-scroll" id="onepage-nav">
 							<li>
 								<a href="{% url 'main:Home' %}" class="nav-link active">Accueil</a>
 							</li>
 							<li>
 								<a href="{% url 'main:A_propos' %}" class="nav-link">Qui sommes-nous ?</a>
-							</li>
-							<li>
-								<a href="{% url 'main:Portfolio' %}" class="nav-link">Portfolio</a>
-							</li>
-							<li>
-								<a href="{% url 'main:Team' %}" class="nav-link">L'équipe</a>
 							</li>
 							<li>
 								<a href="{% url 'main:Contact' %}" class="nav-link">Contact</a>
@@ -325,7 +598,7 @@
 					<div class="row hero__bottom-row">
 						<div class="col d-md-block d-none">
 							<div class="hero__scroll-down local-scroll">
-								<a href="#intro" class="hero__scroll-down-link title-link animate-letters">Qui sommes nous ? </a>
+								<div id="down-arrow" class="arrow down"></div>
 							</div>
 						</div>
 						<div class="col">
@@ -340,30 +613,36 @@
 						</div>
 					</div>
 				</div>
-			</section> <!-- end hero -->			
+			</section> <!-- end hero -->
 
 			<!-- Intro -->
-			<section id="intro" class="section-intro intro">	
+			<section id="intro" class="section-intro intro" style="padding-bottom:5rem;">
 				<div class="container">
 					<div class="row justify-content-center">
 						<div class="col-lg-10">
-							<div class="animate">
-								<h3 class="intro__subtitle"><span style="font-weight:900; color:#ffc62d; font-size:35px;">KUJENGA</span> </br></br> <span style="color:; font-size:15px;">(Swahili)</span></br> <span style="color:;">construire</span>  </br> <span style="color:;">édifier</span></br> <span style="color:;">bâtir</span></h3>
+							<div class="animate reveal">
+								<h3 class="intro__subtitle"><span style="font-weight:900; color:#ffc62d; font-size:35px;">KUJENGA</span> <span style="color:; font-size:20px;"></br></br> <span style="color:;">Conception</span>  </br> <span style="color:;">Etude de projet</span></br> <span style="color:;">Suivi de chantier</span></span></h3>
 							</div>
 							<div class="animate">
 								<p class="intro__text text-large">Expert mahorais engagé à vos côtés pour vos projets d’architecture, <span style="font-weight:600;">Kujenga</span> apporte des solutions viables en s’adaptant à vos contraintes et  vos besoins afin d’en garantir la concrétisation.</p>
 							</div>
 						</div>
 					</div>
+				</div>
 			</section> <!-- end intro -->
 
 			<!-- Team -->
+			<!--
+
 			<section class="section-works pt-0 pb-48" id="team">
 				<div class="container">
 
 					<div id="project-grid" class="project-grid project-grid--2-col">
+						<div class="grid-item project reveal" id="equipe">
+							<span class="pointer title-link animate-letters" style="padding-top:0rem; margin-left:-0.7rem;">L'équipe</span>
+						</div>
 
-						<article class="grid-item project hover-shrink featured">
+						<article class="reveal grid-item project hover-shrink featured">
 							<div class="project__container">
 								<div class="project__url">
 									<figure class="project__img-holder hover-shrink--shrink">
@@ -379,7 +658,7 @@
 							</div>
 						</article>
 
-						<article class="grid-item project hover-shrink featured branding product">
+						<article class="reveal grid-item project hover-shrink featured branding product">
 							<div class="project__container">
 								<div class="project__url">
 									<figure class="project__img-holder hover-shrink--shrink">
@@ -395,9 +674,7 @@
 							</div>
 						</article>
 
-
-
-						<article class="grid-item project hover-shrink featured product">
+						<article class=" reveal grid-item project hover-shrink featured product">
 							<div class="project__container">
 								<div class="project__url">
 									<figure class="project__img-holder hover-shrink--shrink">
@@ -412,33 +689,15 @@
 								</a>
 							</div>
 						</article>
-
-						<article class="grid-item project hover-shrink featured branding">
-							<div class="project__container">
-								<div class="project__url">
-									<figure class="project__img-holder hover-shrink--shrink">
-										<img src="{% static 'img/team/MAMBADI8.jpg' %}" class="project__img hover-shrink--zoom" alt="project 4">
-									</figure>
-								</div>
-								<a href="{% url 'main:Profile_Mambadi'%}"  class="project__description-wrap">
-									<div class="project__description">
-										<h3 class="project__title">Mambadi Issoufi</br> <span style="font-weight:300 !important;">Partenaire clé, fondateur de Mayotte Conseil Conception Ingénierie</span></h3>
-										<span class="project__category" style="font-style:italic !important; color:black;">“Ca va pas tenir ça !”</span>
-									</div>
-								</a>
-							</div>
-						</article>
-
-					</div> <!-- end project grid -->
-
+					</div>
 				</div>
-			</section> <!-- end works -->
+			</section> -->
 
 			<!-- Services -->
 			<section class="section-services pt-40" id="services">
 				<div class="container">
 					<div class="grid-item project">
-						<span class="hero__scroll-down-link title-link animate-letters" style="margin-left:-1rem;">Nos services</span>
+						<span class="hero__scroll-down-link title-link reveal_fast" style="margin-left:-1rem;">Nos services</span>
 					</div>
 					<div class="row justify-content-center">
 						<div class="col-lg-10">
@@ -458,20 +717,20 @@
 
 								<ul class="services-content">
 									<li class="services-content__item services-content__item--is-active">
-										Conception • esquisse • Permis de construire • Suivi de chantier
+										Nous proposons des services adaptés aux besoins des particuliers afin de les accompagner dans la réalisation de leurs projets de construction ou de rénovation.
 									</li>
 									<li class="services-content__item">
-										Conception • esquisse • Étude de projet • Permis de construire • Suivi de chantier
+										Nous proposons nos services aux collectivités en adaptant notre approche aux besoins et exigences des décideurs publics.
 									</li>
 									<li class="services-content__item">
-										Conception • esquisse • Étude de projet • Permis de construire • Suivi de chantier • Dossier de consultation
+										Nous accompagnons les entreprises dans la réalisation de leurs projets en proposant des services sur mesure prenant en compte leurs contraintes particulières.
 								</ul>
 							</div>
 
 						</div>
 					</div>
 				</div>
-			</section> <!-- end services -->	
+			</section> <!-- end services -->
 
 			<!-- From Blog -->
 			<section class="section-from-blog" id="work">
@@ -489,21 +748,25 @@
 
 				<!-- Slider -->
 				<div class="slick-slider blog-slider">
+
 					{% for projet in Projets %}
 					<div class="slick-slider-item">
 						<article class="entry hover-shrink" itemscope itemtype="http://schema.org/Article">
 							<div class="entry__body">
-								<a href="{% url 'main:Project' projet.pk %}" class="entry__url"></a>
-								<figure class="entry__img-holder bg-gradient-bottom hover-shrink--shrink">	
-									<img src="{{projet.image.url}}" class="entry__img hover-shrink--zoom" itemprop="image" alt="">
+								<a href="#" class="entry__url"></a>
+								<figure class="entry__img-holder hover-shrink--shrink">
+									<img src="{%static 'img/logo_forêt.png'%}" class="entry__img hover-shrink--zoom" itemprop="image" alt="">
 								</figure>
 
 								<div class="entry__info-holder">
-									<h4 class="entry__title title-underline" itemprop="headline">
+									<h4 class="entry__title title-underline description" style="font-size:12px;" itemprop="headline">
+										{{projet.description}}
+									</h4>
+									<h4 class="entry__title title-underline" style="color:black !important;" itemprop="headline">
 										{{projet.titre}}
 									</h4>
 									<div class="entry__meta">
-										<span class="entry__meta-item entry__meta-date" itemprop="datePublished" content="2020-25-8">{{projet.date}}</span>
+										<span style="color:black !important;" class="entry__meta-item entry__meta-date" itemprop="datePublished" content="2020-25-8">{{projet.date}}</span>
 									</div>
 								</div>
 							</div>
@@ -516,7 +779,7 @@
 
 		</main> <!-- end content wrap -->
 
-			<!-- Footer -->
+	<!-- Footer -->
 		<footer class="footer bg-dark" style="background-image:none !important;" itemtype="http://schema.org/WPFooter" itemscope>
 			<div class="container">
 				<div class="footer__cta">
@@ -537,19 +800,19 @@
 
 						<div class="col-lg-8 col-md-6">
 							<div class="widget widget-about-us">
-								<address class="widget-about-us__address">18 Chemin Majimbini,<br>
+								<address class="widget-about-us__address">18 route de la convalescence,<br>
 								97600 Mamoudzou</address>
 								<a href="mailto:contact@kujenga-architectes.com" class="widget-about-us__email">contact@kujenga-architectes.com</a>
-								<a href="tel:+33664689138" class="widget-about-us__phone">+33 6 64 68 91 38</a>
+								<a href="tel:+33639607314" class="widget-about-us__phone">+33 6 39 60 73 14</a>
 							</div>
 						</div> <!-- end about us -->
 
 						<div class="col-lg-2 col-md-3">
 							<div class="widget widget-nav-menu">
 								<ul>
-									<li><a href="{% url 'main:Portfolio' %}">Portfolio</a></li>
-									<li><a href="{% url 'main:Team' %}">L'équipe</a></li>
-									<li><a href="{% url 'main:Contact' %}">Contact</a></li>
+									<li style="font-size:15px !important;"><a href="{% url 'main:Home' %}">Accueil</a></li>
+									<li style="font-size:15px !important;"><a href="{% url 'main:A_propos' %}"> A propos</a></li>
+									<li style="font-size:15px !important;"><a href="{% url 'main:Contact' %}">Contact</a></li>
 								</ul>
 							</div>
 						</div> <!-- end widget nav menu
@@ -561,7 +824,7 @@
 									<li><a href="#">Linkedin</a></li>
 								</ul>
 							</div>
-						</div> end widget nav menu -->-->
+						</div> end widget nav menu -->
 
 					</div>
 				</div>
@@ -587,8 +850,33 @@
 	<!-- JS Scripts -->
 	<script src="{% static 'js/jquery.min.js' %}"></script>
 	<script src="{% static 'js/scripts.min.js' %}"></script>
+	<script>
+		 function reveal() {
+	  var reveals = document.querySelectorAll(".reveal");
+
+	  for (var i = 0; i < reveals.length; i++) {
+		var windowHeight = window.innerHeight;
+		var elementTop = reveals[i].getBoundingClientRect().top;
+		var elementVisible = 0;
+
+		if (elementTop < windowHeight - elementVisible) {
+		  reveals[i].classList.add("active");
+		} else {
+		  reveals[i].classList.remove("active");
+		}
+	  }
+	}
+
+	window.addEventListener("scroll", reveal);
+
+    var down = document.getElementById("down-arrow");
+    down.addEventListener("click", function(){
+        window.scrollBy(0, 900);
+    });
+
+	</script>
 
 
-		
+
 </body>
 </html>

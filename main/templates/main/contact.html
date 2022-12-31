@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-	<title>Kujenga | cabinet d'architecture</title>
+	<title>Dorya | Contact</title>
 
 	<meta charset="utf-8">
 	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
@@ -19,10 +19,10 @@
 	<link rel="stylesheet" href="{% static 'css/custom.css' %}" />
 
 	<!-- Favicons -->
-	<link rel="shortcut icon" href="{%static 'img/Logo_jamaïque.png'%}">
-	<link rel="apple-touch-icon" href="{% static 'img/Logo_jamaïque.png' %}">
-	<link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/Logo_jamaïque.png' %}">
-	<link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/Logo_jamaïque.png' %}">
+	<link rel="shortcut icon" href="{%static 'img/favicon.ico'%}">
+	<link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/apple-touch-icon-72x72.png' %}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/apple-touch-icon-114x114.png' %}">
 
 </head>
 
@@ -90,160 +90,266 @@
 				.services-list__label::after {
 					bottom: 20px; } }
 
-.project {
-	position: relative;
-	overflow: hidden;
-	padding: 30px; }
-	@media only screen and (min-width: 1025px) {
-		.project {
-			padding: 70px; }
-			.project:nth-child(2) {
-				margin-top: 140px; } }
-	.project-slide {
-		margin: 0 19px; }
-	.project__container {
-		position: relative; }
-	.project__img-holder {
+	.project {
 		position: relative;
-		width: 100%;
-		height: 100%;
-		margin: 0;
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden; }
-	.project__img {
-		width: 100%;
-		filter: blur(15px);
-		transition: all 0.4s cubic-bezier(0.25, 0.74, 0.22, 0.99);
 		overflow: hidden;
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden; }
-		@media (prefers-reduced-motion: reduce) {
-			.project__img {
-				transition: none; } }
-	.project__title, .project__category {
-		opacity: 0;
-		transition: opacity 0.2s cubic-bezier(0.07, 0.98, 0, 0.96); }
-		@media (prefers-reduced-motion: reduce) {
-			.project__title, .project__category {
-				transition: none; } }
-	.project__description-wrap {
-		position: absolute;
-		opacity: 0;
-		bottom: 40px;
-		left: 40px;
-		display: inline-block;
-		width: 78%;
-		max-width: 260px;
-		-webkit-clip-path: inset(0 0 0 100%);
-		clip-path: inset(0 0 0 100%);
-		transition: opacity 0.2s 0.3s, -webkit-clip-path 0s 0.3s;
-		transition: opacity 0.2s 0.3s, clip-path 0s 0.3s;
-		transition: opacity 0.2s 0.3s, clip-path 0s 0.3s, -webkit-clip-path 0s 0.3s; }
-		@media (prefers-reduced-motion: reduce) {
-			.project__description-wrap {
-				transition: none; } }
-	.project__description {
-		position: relative;
-		padding: 16px 20px; }
-		.project__description:after {
-			content: '';
-			position: absolute;
-			display: block;
+		padding: 30px; }
+		@media only screen and (min-width: 1025px) {
+			.project {
+				padding: 70px; }
+				.project:nth-child(2) {
+					margin-top: 140px; } }
+		.project-slide {
+			margin: 0 19px; }
+		.project__container {
+			position: relative; }
+		.project__img-holder {
+			position: relative;
 			width: 100%;
 			height: 100%;
-			top: 0;
-			left: 0;
-			background-color: #fff;
-			transform-origin: 0 50%;
-			transform: scaleX(0);
-			transition: transform 0.35s cubic-bezier(0.07, 0.98, 0, 0.96); }
+			margin: 0;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden; }
+		.project__img {
+			width: 100%;
+			filter: blur(15px);
+			transition: all 0.4s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+			overflow: hidden;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden; }
 			@media (prefers-reduced-motion: reduce) {
-				.project__description:after {
+				.project__img {
 					transition: none; } }
-	.project:hover .project__description-wrap {
-		opacity: 1;
-		filter: blur(0px);
-		-webkit-clip-path: inset(0 0 0 0);
-		clip-path: inset(0 0 0 0);
-		transition: -webkit-clip-path 0.8s cubic-bezier(0.07, 0.98, 0, 0.96);
-		transition: clip-path 0.8s cubic-bezier(0.07, 0.98, 0, 0.96);
-		transition: clip-path 0.8s cubic-bezier(0.07, 0.98, 0, 0.96), -webkit-clip-path 0.8s cubic-bezier(0.07, 0.98, 0, 0.96); }
-	.project:hover .project__description:after {
-		transform-origin: 100% 50%;
-		transform: scaleX(1);
-		transition: transform 0.7s cubic-bezier(0.07, 0.98, 0, 0.96); }
-		@media (prefers-reduced-motion: reduce) {
-			.project:hover .project__description:after {
-				transition: none; } }
-	.project:hover .project__title,
-	.project:hover .project__category {
-		opacity: 1; }
-	.project__url {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 100%; }
-	.project__title {
-		font-size: 1.25rem;
-		position: relative;
-		z-index: 2; }
-	.project__category {
-		position: relative;
-		z-index: 2;
-		display: inline-block;
-		margin-top: 16px;
-		font-size: 0.875rem;
-		font-weight: 700; }
+		.project__title, .project__category {
+			opacity: 0;
+			transition: opacity 0.2s cubic-bezier(0.07, 0.98, 0, 0.96); }
+			@media (prefers-reduced-motion: reduce) {
+				.project__title, .project__category {
+					transition: none; } }
+		.project__description-wrap {
+			position: absolute;
+			opacity: 0;
+			bottom: 40px;
+			left: 40px;
+			display: inline-block;
+			width: 78%;
+			max-width: 260px;
+			-webkit-clip-path: inset(0 0 0 100%);
+			clip-path: inset(0 0 0 100%);
+			transition: opacity 0.2s 0.3s, -webkit-clip-path 0s 0.3s;
+			transition: opacity 0.2s 0.3s, clip-path 0s 0.3s;
+			transition: opacity 0.2s 0.3s, clip-path 0s 0.3s, -webkit-clip-path 0s 0.3s; }
+			@media (prefers-reduced-motion: reduce) {
+				.project__description-wrap {
+					transition: none; } }
+		.project__description {
+			position: relative;
+			padding: 16px 20px; }
+			.project__description:after {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background-color: #fff;
+				transform-origin: 0 50%;
+				transform: scaleX(0);
+				transition: transform 0.35s cubic-bezier(0.07, 0.98, 0, 0.96); }
+				@media (prefers-reduced-motion: reduce) {
+					.project__description:after {
+						transition: none; } }
+		.project:hover .project__description-wrap {
+			opacity: 1;
+			filter: blur(0px);
+			-webkit-clip-path: inset(0 0 0 0);
+			clip-path: inset(0 0 0 0);
+			transition: -webkit-clip-path 0.8s cubic-bezier(0.07, 0.98, 0, 0.96);
+			transition: clip-path 0.8s cubic-bezier(0.07, 0.98, 0, 0.96);
+			transition: clip-path 0.8s cubic-bezier(0.07, 0.98, 0, 0.96), -webkit-clip-path 0.8s cubic-bezier(0.07, 0.98, 0, 0.96); }
+		.project:hover .project__description:after {
+			transform-origin: 100% 50%;
+			transform: scaleX(1);
+			transition: transform 0.7s cubic-bezier(0.07, 0.98, 0, 0.96); }
+			@media (prefers-reduced-motion: reduce) {
+				.project:hover .project__description:after {
+					transition: none; } }
+		.project:hover .project__title,
+		.project:hover .project__category {
+			opacity: 1; }
+		.project__url {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: 100%; }
+		.project__title {
+			font-size: 1.25rem;
+			position: relative;
+			z-index: 2; }
+		.project__category {
+			position: relative;
+			z-index: 2;
+			display: inline-block;
+			margin-top: 16px;
+			font-size: 0.875rem;
+			font-weight: 700; }
 
-	.hover-shrink--shrink, .hover-shrink--zoom {
-	transition: all 0.2s ease-in-out; }
-	@media (prefers-reduced-motion: reduce) {
 		.hover-shrink--shrink, .hover-shrink--zoom {
-			transition: none; } }
+		transition: all 0.2s ease-in-out; }
+		@media (prefers-reduced-motion: reduce) {
+			.hover-shrink--shrink, .hover-shrink--zoom {
+				transition: none; } }
 
-	.hover-shrink:hover .hover-shrink--shrink {
-		transform: scale(0.95);
-		filter: blur(0px);
+		.hover-shrink:hover .hover-shrink--shrink {
+			transform: scale(0.95);
+			filter: blur(0px);
+			}
+
+		.project__img:hover {
+			filter: blur(0px);
 		}
 
-	.project__img:hover {
-		filter: blur(0px);
-	}
-
-	.contact_information {
-		color:black !important;
-		transition:0.2s;
-	}
-
-	.contact_information:hover {
-		color: #fcc10c !important;
-	}
-
-	.reveal{
-		  position: relative;
-		  transform: translateY(150px);
-		  opacity: 0;
-		  transition: 2s all ease;
+		.contact_information {
+			color:black !important;
+			transition:0.2s;
 		}
 
-		.reveal.active{
-		  transform: translateY(0);
-		  opacity: 1;
+		.contact_information:hover {
+			color: #fcc10c !important;
 		}
 
-		.btn {
-			border-style:solid;
-			border-width:1px;
-			border-color:#fcc10c;
-			background-color:transparent;
-			color:#fcc10c;
+		.reveal{
+			  position: relative;
+			  transform: translateY(150px);
+			  opacity: 0;
+			  transition: 2s all ease;
+			}
+
+			.reveal.active{
+			  transform: translateY(0);
+			  opacity: 1;
+			}
+
+			.btn {
+				border-style:solid;
+				border-width:1px;
+				border-color:#fcc10c;
+				background-color:transparent;
+				color:#fcc10c;
+			}
+
+			.btn:hover {
+				background-color:#fcc10c;
+				border-color:transparent;
+				color:white;
+			}
+
+			#down-arrow {
+				position: fixed;
+				bottom: 20px;
+				right: 30px;
+				cursor:pointer;
+
+			}
+
+		.page-title {
+			position: relative;
+			padding: 60px 0; }
+			@media only screen and (max-width: 767px) {
+				.page-title {
+					padding: 60px 0; } }
+			.page-title__holder {
+				max-width: 860px; }
+			.page-title__title {
+				font-size: 32px;
+				font-size: 2rem;
+				line-height: 1.3;
+				margin-bottom: 28px; }
+				@media only screen and (min-width: 1025px) {
+					.page-title__title {
+						font-size: 56px;
+						font-size: 3.5rem; } }
+			.page-title__subtitle {
+				font-size: 24px;
+				font-size: 1.5rem;
+				line-height: 1.4; }
+
+	.section-contact-info {
+		padding-top: 24px;
+		padding-bottom: 10px; }
+		@media only screen and (min-width: 1025px) {
+			.section-contact-info {
+				padding-bottom: 160px; } }
+
+
+	.contact-info {
+		font-family: "aktiv-grotesk-extended", "Montserrat", sans-serif;
+		font-weight: 700;
+		margin-bottom: 48px; }
+		.contact-info a,
+		.contact-info address,
+		.contact-info span {
+			font-size: 20px;
+			font-size: 1.25rem;
+			line-height: 1.7; }
+		.contact-info a:hover {
+			color: #0052f8; }
+		.contact-info__title {
+			font-size: 24px;
+			font-size: 1.5rem;
+			margin-bottom: 26px; }
+		.contact-info__email, .contact-info__phone {
+			display: block;
+			color: #262626; }
+
+		#bande {
+			display:None;
 		}
 
-		.btn:hover {
-			background-color:#fcc10c;
-			border-color:transparent;
+		@media (min-width: 1025px) {
+		  /* les règles de style suivantes s'appliqueront uniquement lorsque la largeur de l'écran sera supérieure à 1000 pixels */
+		  #bande {
+			display: block;
+			position:absolute;
+			bottom:2rem;
+			width:100vw;
+			background-color:#FCC10C;
 			color:white;
+			text-align:center;
+			color:white;
+			transition:ease 0.2s;
+			height:7rem;
+		  }
 		}
+
+			#down-arrow {
+				position: fixed;
+				bottom: 30px;
+				right: 30px;
+				cursor:pointer;
+
+			}
+
+				.arrow {
+				  border: solid white;
+				  border-width: 0 3px 3px 0;
+				  display: inline-block;
+				  padding: 8px;
+				}
+
+				.arrow:hover {
+				  padding: 15px;
+				  transition:ease 0.3s;
+				}
+
+				.down {
+			  transform: rotate(45deg);
+			  -webkit-transform: rotate(45deg);
+			}
+
+			html { scroll-behavior:smooth;}
+
 
 
 </style>
@@ -253,7 +359,7 @@
 	<!-- Preloader -->
 	<div class="loader-mask">
 		<div class="loader">
-			<img class="loader-logo logo" src="{% static 'img/Logo_blanc_seul.png' %}" alt="logo"
+			<img class="loader-logo logo" src="{% static 'img/logo_blanc_seul.png' %}" alt="logo"
 				itemtype="http://schema.org/Organization" itemscope>
 				<div class="loader-bar" style="margin-top:30px;"><span></span></div>
 			"Loading..."
@@ -271,7 +377,7 @@
 						<!-- Logo -->
 						<div class="logo-wrap local-scroll">
 							<a href="{% url 'main:Home' %}" class="logo__url">
-								<img class="logo logo--dark" style="height:60px !important; padding-top:20px;" src="{% static 'img/Logo_4couleurs.png' %}" alt="logo" itemtype="http://schema.org/Organization" itemscope>
+								<img class="logo logo--dark" style="height:80px !important; padding-top:20px;" src="{% static 'img/Logo_4couleurs.png' %}" alt="logo" itemtype="http://schema.org/Organization" itemscope>
 							</a>
 						</div>
 
@@ -292,12 +398,6 @@
 								<a href="{% url 'main:A_propos' %}" class="nav-link">Qui sommes-nous ?</a>
 							</li>
 							<li>
-								<a href="{% url 'main:Portfolio' %}" class="nav-link">Portfolio</a>
-							</li>
-							<li>
-								<a href="{% url 'main:Team' %}" class="nav-link ">L'équipe</a>
-							</li>
-							<li>
 								<a href="{% url 'main:Contact' %}" class="nav-link active">Contact</a>
 							</li>
 						</ul> <!-- end menu -->
@@ -314,7 +414,7 @@
 		<main class="content-wrap">
 
 			<!-- Page Title -->
-			<section class="page-title">
+			<section class="page-title" style="padding-top:-10px;">
 				<div class="container">
 					<div class="page-title__holder">
 						<h1 class="page-title__title">Construisons ensemble quelque chose de fantastique !</h1>
@@ -331,7 +431,7 @@
 							<div class="contact-info">
 								<h3 class="contact-info__title">Direction</h3>
 								<a href="mailto:d.soumaila@kujenga-architectes.com" class="contact_information" style="font-size:16px;">d.soumaila@kujenga-architectes.com</a> </br>
-								<a href="tel:+336-64-68-91-38" class="contact_information"  style="font-size:16px;">+33 6 64 68 91 38 </a>
+								<a href="tel:+336-39-60-73-14" class="contact_information"  style="font-size:16px;">+33 6 39 60 73 14</a>
 							</div>
 						</div>
 						<div class="col-lg-4">
@@ -343,23 +443,26 @@
 						<div class="col-lg-4">
 							<div class="contact-info">
 								<h3 class="contact-info__title">Addresse</h3>
-								<address class="contact-info__address" style="font-size:16px;">18 Chemin Majimbini,<br>
+								<address class="contact-info__address" style="font-size:16px;">18 route de la convalescence,<br>
 								97600 Mamoudzou</address>
 							</div>
 						</div>
 					</div>
+
+				</div>
+				<div id="bande">
+					<i class="bi bi-pencil-square"></i>
+					<div class="hero__scroll-down local-scroll">
+						<div id="down-arrow" class="arrow down"></div>
+					</div>
 				</div>
 			</section> <!-- contact info -->
-
-			<!-- Contact Image -->
-			<img src="{% static 'img/team/TEAM1.jpg' %}" alt="contact" class="section-contact-image">
-
 
 			<!-- Team -->
 			<section class="section-team section-large-padding">
 				<div class="container">
 					<h1 class="contact-info__title" style="font-size:40px;">Votre message</h1>
-					<div class="container">
+					<div class="container" style="padding-bottom:5rem !important;">
 						 <form class="form" method="POST" data-aos="fade">
 							 {% csrf_token %}
 								<div class="row">
@@ -389,7 +492,7 @@
 
 		</main> <!-- end content wrap -->
 
-			<!-- Footer -->
+		<!-- Footer -->
 		<footer class="footer bg-dark" style="background-image:none !important;" itemtype="http://schema.org/WPFooter" itemscope>
 			<div class="container">
 				<div class="footer__cta">
@@ -410,19 +513,19 @@
 
 						<div class="col-lg-8 col-md-6">
 							<div class="widget widget-about-us">
-								<address class="widget-about-us__address">18 Chemin Majimbini,<br>
+								<address class="widget-about-us__address">18 route de la convalescence,<br>
 								97600 Mamoudzou</address>
 								<a href="mailto:contact@kujenga-architectes.com" class="widget-about-us__email">contact@kujenga-architectes.com</a>
-								<a href="tel:+33664689138" class="widget-about-us__phone">+33 6 64 68 91 38</a>
+								<a href="tel:+33639607314" class="widget-about-us__phone">+33 6 39 60 73 14</a>
 							</div>
 						</div> <!-- end about us -->
 
 						<div class="col-lg-2 col-md-3">
 							<div class="widget widget-nav-menu">
 								<ul>
-									<li><a href="{% url 'main:Portfolio' %}">Portfolio</a></li>
-									<li><a href="{% url 'main:Team' %}">L'équipe</a></li>
-									<li><a href="{% url 'main:Contact' %}">Contact</a></li>
+									<li style="font-size:15px !important;"><a href="{% url 'main:Home' %}">Accueil</a></li>
+									<li style="font-size:15px !important;"><a href="{% url 'main:A_propos' %}"> A propos</a></li>
+									<li style="font-size:15px !important;"><a href="{% url 'main:Contact' %}">Contact</a></li>
 								</ul>
 							</div>
 						</div> <!-- end widget nav menu
@@ -434,7 +537,7 @@
 									<li><a href="#">Linkedin</a></li>
 								</ul>
 							</div>
-						</div> end widget nav menu -->-->
+						</div> end widget nav menu -->
 
 					</div>
 				</div>
@@ -462,7 +565,7 @@
 
 
 	</div> <!-- end main wrap -->
-	
+
 
 	<!-- JS Scripts -->
 	<script src="{% static 'js/jquery.min.js' %}"></script>
@@ -486,6 +589,13 @@
 	}
 
 	window.addEventListener("scroll", reveal);
+
+	window.addEventListener("scroll", reveal);
+
+    var down = document.getElementById("down-arrow");
+    down.addEventListener("click", function(){
+        window.scrollBy(0, 900);
+    });
 	</script>
 	
 </body>
